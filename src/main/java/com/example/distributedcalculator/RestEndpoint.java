@@ -13,7 +13,7 @@ public class RestEndpoint {
         return  new PingResponse("pong");
     }
     @GetMapping("/modulus")
-    IntValue modulus(@RequestParam int a, @RequestParam int b) {
-        return new IntValue(a % b);
+    IntValue modulus(@RequestParam int n1, @RequestParam int n2) {
+        return new IntValue(n1 % n2);
     }
 }
