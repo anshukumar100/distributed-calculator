@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class RestEndpoint {
+
+    @GetMapping("/ping")
+    PingResponse ping() {
+        return  new PingResponse("pong");
+    }
     @GetMapping("/modulus")
-    int modulus(@RequestParam int a, @RequestParam int b) {
-        return a % b;
+    IntValue modulus(@RequestParam int a, @RequestParam int b) {
+        return new IntValue(a % b);
     }
 }
